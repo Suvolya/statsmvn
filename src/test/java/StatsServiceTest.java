@@ -9,19 +9,19 @@ public class StatsServiceTest {
         StatsService service = new StatsService();
         long[] sales = {8,15,13,15,17,20,19,20,7,14,14,18};
 
-        int expected = 180;
-        int actual = StatsService.calculateSum(sales);
+        long expected = 180;
+        long actual = service.sum(sales);
 
         Assertions.assertEquals(expected, actual);
     }
 
     @Test
-    public void shouldcalcArithmetic() {
+    public void shouldcalcAverage() {
         StatsService service = new StatsService();
         long[] sales = {8,15,13,15,17,20,19,20,7,14,14,18};
 
-        int expected = 15;
-        int actual = StatsService.calculateArithmetic(sales);
+        long expected = 15;
+        long actual = service.average(sales);
 
         Assertions.assertEquals(expected, actual);
     }
@@ -32,7 +32,7 @@ public class StatsServiceTest {
         long[] sales = {8,15,13,15,17,20,19,20,7,14,14,18};
 
         int expected = 8;
-        int actual = StatsService.calculateMaxSales(sales);
+        int actual = service.maxSales(sales);
 
         Assertions.assertEquals(expected, actual);
     }
@@ -43,29 +43,29 @@ public class StatsServiceTest {
         long[] sales = {8,15,13,15,17,20,19,20,7,14,14,18};
 
         int expected = 9;
-        int actual = StatsService.calculateMinSales(sales);
+        int actual = service.minSales(sales);
 
         Assertions.assertEquals(expected, actual);
     }
 
     @Test
-    public void shouldcalcBelowArithmetic() {
+    public void shouldcalcLowAverage() {
         StatsService service = new StatsService();
         long[] sales = {8,15,13,15,17,20,19,20,7,14,14,18};
 
         int expected = 5;
-        int actual = StatsService.calculateBelowArithmetic(sales);
+        int actual = service.lowAverage(sales);
 
         Assertions.assertEquals(expected, actual);
     }
 
     @Test
-    public void shouldcalcAboveArithmetic() {
+    public void shouldcalcHighAverage() {
         StatsService service = new StatsService();
         long[] sales = {8,15,13,15,17,20,19,20,7,14,14,18};
 
         int expected = 5;
-        int actual = StatsService.calculateAboveArithmetic(sales);
+        int actual = service.highAverage(sales);
 
         Assertions.assertEquals(expected, actual);
     }
